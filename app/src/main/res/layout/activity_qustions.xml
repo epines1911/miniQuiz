@@ -6,4 +6,77 @@
     android:layout_height="match_parent"
     tools:context=".Questions">
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/textViewQueText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="题干"
+        app:layout_constraintTop_toBottomOf="@id/progressBar"
+        app:layout_constraintBottom_toTopOf="@id/textViewAnswer1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="30dp"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/textViewAnswer1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="答案1"
+        app:layout_constraintTop_toBottomOf="@id/textViewQueText"
+        app:layout_constraintBottom_toTopOf="@id/textViewAnswer2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="20dp"
+        android:textSize="40dp"/>
+
+    <TextView
+        android:id="@+id/textViewAnswer2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="答案2"
+        app:layout_constraintTop_toBottomOf="@id/textViewAnswer1"
+        app:layout_constraintBottom_toTopOf="@id/textViewAnswer3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="20dp"
+        android:textSize="40dp"/>
+
+    <TextView
+        android:id="@+id/textViewAnswer3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="答案3"
+        app:layout_constraintTop_toBottomOf="@id/textViewAnswer2"
+        app:layout_constraintBottom_toTopOf="@id/textViewAnswer4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="20dp"
+        android:textSize="40dp"/>
+
+    <TextView
+        android:id="@+id/textViewAnswer4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="答案4"
+        app:layout_constraintTop_toBottomOf="@id/textViewAnswer3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="20dp"
+        android:textSize="40dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
