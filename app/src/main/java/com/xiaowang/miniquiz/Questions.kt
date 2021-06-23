@@ -2,41 +2,48 @@ package com.xiaowang.miniquiz
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ProgressBar
-import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_qustions.*
 
 class Questions : AppCompatActivity() {
 
-//    private val progressBar: ProgressBar = findViewById(R.id.progressBar)
-//    private val questionTextView: TextView = findViewById(R.id.textViewQueText)
-//    private val answer1: TextView = findViewById(R.id.textViewAnswer1)
-//    private val answer2: TextView = findViewById(R.id.textViewAnswer2)
-//    private val answer3: TextView = findViewById(R.id.textViewAnswer3)
-//    private val answer4: TextView = findViewById(R.id.textViewAnswer4)
+    // TODO: 2021/6/23 define the max value of progressBar
+    // TODO: 2021/6/23 change border color of answer1,2,3 and 4
+
+    private var mCurrentPosition = 1
+    private var mQuestionsList: ArrayList<QuestionRepo>? = null
+    private var mSelectedOptionPosition = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_qustions)
 
-        val progressBar: ProgressBar = findViewById(R.id.progressBar)
-        val questionTextView: TextView = findViewById(R.id.textViewQueText)
-        val answer1: TextView = findViewById(R.id.textViewAnswer1)
-        val answer2: TextView = findViewById(R.id.textViewAnswer2)
-        val answer3: TextView = findViewById(R.id.textViewAnswer3)
-        val answer4: TextView = findViewById(R.id.textViewAnswer4)
+        //为啥要在这getQuestion，这行为啥不能写在fun里？
+        mQuestionsList = Constants.getQuestions()
 
-        val questionList = Constants.getQuestions()
-
-        val currentPosition = 1
-        val currentQuestion: QuestionRepo = questionList[currentPosition-1]
-        progressBar.progress = currentPosition
-        questionTextView.text = currentQuestion.question
-        answer1.text = currentQuestion.answers[0]
-        answer2.text = currentQuestion.answers[1]
-        answer3.text = currentQuestion.answers[2]
-        answer4.text = currentQuestion.answers[3]
+        setQuestion()
 
 
 
+
+
+    }
+
+    private fun setQuestion(){
+        val currentQuestion = mQuestionsList!![mCurrentPosition-1]
+
+        progressBar.progress = mCurrentPosition
+        textViewQueText.text = currentQuestion.question
+        textViewAnswer1.text = currentQuestion.answers[0]
+        textViewAnswer2.text = currentQuestion.answers[1]
+        textViewAnswer3.text = currentQuestion.answers[2]
+        textViewAnswer4.text = currentQuestion.answers[3]
+    }
+
+    private fun setDefaultForm(){
+        textViewAnswer1.setTextColor()
+        textViewAnswer2.setTextColor()
+        textViewAnswer3.setTextColor()
+        textViewAnswer4.setTextColor()
     }
 }
