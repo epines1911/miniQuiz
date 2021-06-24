@@ -1,18 +1,21 @@
 package com.xiaowang.miniquiz
 
+import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_qustions.*
 
 class Questions : AppCompatActivity() {
 
     // TODO: 2021/6/23 define the max value of progressBar
-    // TODO: 2021/6/23 change border color of answer1,2,3 and 4
 
-    private var mCurrentPosition = 1
-    private var mQuestionsList: ArrayList<QuestionRepo>? = null
+    var mCurrentPosition = 1
+    var mQuestionsList: ArrayList<QuestionRepo>? = null
     private var mSelectedOptionPosition = 0
 
+//    var currentQuestion = mQuestionsList!![mCurrentPosition-1]
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +26,32 @@ class Questions : AppCompatActivity() {
 
         setQuestion()
 
+        val currentQuestion = mQuestionsList!![mCurrentPosition-1]
+
+        textViewAnswer1.setOnClickListener {
+            if (textViewAnswer1.text == currentQuestion.correctAnswer){
+                setRightForm(textViewAnswer1)
+            }else{
+                setWrongForm(textViewAnswer1)
+
+                val intentShowHint = Intent(this, ShowCorrectHint::class.java)
+                startActivity(intentShowHint)
+
+//                val showCorrectAnswer = ShowCorrectAnswer.newInstance()
+//                this.supportFragmentManager.beginTransaction().apply {
+//                    add(this@Questions.taskId, showCorrectAnswer)
+//                    this.addToBackStack(null)
+//                    commit()
+//                }
+            }
+        }
+
+        buttonNext.setOnClickListener {
+            mCurrentPosition++
+            setDefaultForm()
+            setQuestion()
+        }
+
 
 
 
@@ -31,7 +60,6 @@ class Questions : AppCompatActivity() {
 
     private fun setQuestion(){
         val currentQuestion = mQuestionsList!![mCurrentPosition-1]
-
         progressBar.progress = mCurrentPosition
         textViewQueText.text = currentQuestion.question
         textViewAnswer1.text = currentQuestion.answers[0]
@@ -41,9 +69,33 @@ class Questions : AppCompatActivity() {
     }
 
     private fun setDefaultForm(){
-        textViewAnswer1.setTextColor()
-        textViewAnswer2.setTextColor()
-        textViewAnswer3.setTextColor()
-        textViewAnswer4.setTextColor()
+        textViewAnswer1.setTextColor(Color.parseColor("#FF3700B3"))
+        textViewAnswer2.setTextColor(Color.parseColor("#FF3700B3"))
+        textViewAnswer3.setTextColor(Color.parseColor("#FF3700B3"))
+        textViewAnswer4.setTextColor(Color.parseColor("#FF3700B3"))
+
+        textViewAnswer1.setBackgroundColor(Color.WHITE)
+        textViewAnswer2.setBackgroundColor(Color.WHITE)
+        textViewAnswer3.setBackgroundColor(Color.WHITE)
+        textViewAnswer4.setBackgroundColor(Color.WHITE)
+    }
+
+    private fun setRightForm(tv:TextView){
+        tv.setTextColor(Color.WHITE)
+        tv.setBackgroundColor(Color.parseColor("#FF018786"))
+    }
+
+    private fun setWrongForm(tv:TextView){
+        tv.setTextColor(Color.WHITE)
+        tv.setBackgroundColor(Color.parseColor("#FFFF9966"))
+    }
+
+    private fun showCorrectAnswer(){
+        TODO()//一个弹出的对话框一样的，含有正确答案，参见Quizlet，可能大概得用fragment
+
+    }
+
+    private fun showSmile(){
+        TODO()//一个弹出的对话框一样的，提示做对了，参见Quizlet，可能大概得用fragment
     }
 }

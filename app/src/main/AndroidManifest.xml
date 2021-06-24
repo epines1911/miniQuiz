@@ -10,8 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiniQuiz">
         <activity
+            android:name=".ShowCorrectHint"
+            android:screenOrientation="portrait"
+            ></activity>
+        <activity
+            android:name=".Finish"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".Questions"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
