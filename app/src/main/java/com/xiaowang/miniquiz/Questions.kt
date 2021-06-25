@@ -34,8 +34,7 @@ class Questions : AppCompatActivity() {
             }else{
                 setWrongForm(textViewAnswer1)
 
-                val intentShowHint = Intent(this, ShowCorrectHint::class.java)
-                startActivity(intentShowHint)
+                showCorrectAnswer()
 
 //                val showCorrectAnswer = ShowCorrectAnswer.newInstance()
 //                this.supportFragmentManager.beginTransaction().apply {
@@ -47,11 +46,16 @@ class Questions : AppCompatActivity() {
         }
 
         buttonNext.setOnClickListener {
-            mCurrentPosition++
-            setDefaultForm()
-            setQuestion()
+            if ( mCurrentPosition >= mQuestionsList!!.size) {
+                val intentFinish = Intent(this, Finish::class.java)
+                startActivity(intentFinish)
+                finish()
+            } else {
+                mCurrentPosition++
+                setDefaultForm()
+                setQuestion()
+            }
         }
-
 
 
 
@@ -91,8 +95,11 @@ class Questions : AppCompatActivity() {
     }
 
     private fun showCorrectAnswer(){
-        TODO()//一个弹出的对话框一样的，含有正确答案，参见Quizlet，可能大概得用fragment
-
+        val intentShowHint = Intent(this, ShowCorrectHint::class.java)
+        val currentQuestion = mQuestionsList!![mCurrentPosition-1]
+        val answerText = currentQuestion.question
+        intentShowHint.putExtra("answer_text", answerText)
+        startActivity(intentShowHint)
     }
 
     private fun showSmile(){

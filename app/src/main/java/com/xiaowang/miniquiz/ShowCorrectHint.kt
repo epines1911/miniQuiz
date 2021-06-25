@@ -10,8 +10,7 @@ class ShowCorrectHint : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_correct_hint)
 
-
-        textViewAnswerCard.text = Questions().currentQuestion.question
+        textViewAnswerCard.text = intent.getStringExtra("answer_text")
 
         buttonContinue.setOnClickListener {
             val intentBackToQuiz = Intent(this, Questions::class.java)

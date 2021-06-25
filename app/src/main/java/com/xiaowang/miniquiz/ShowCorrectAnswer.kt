@@ -24,8 +24,8 @@ class ShowCorrectAnswer : Fragment() {
         buttonContinue.setOnClickListener {
             fragmentManager?.popBackStack();
         }
-        val currentQuestion = Questions().mQuestionsList!![Questions().mCurrentPosition-1]
-        textViewAnswerCard.text = currentQuestion.question
+
+//        textViewAnswerCard.text = currentQuestion.question
     }
 
     companion object {
