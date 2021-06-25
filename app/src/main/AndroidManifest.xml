@@ -11,8 +11,7 @@
         android:theme="@style/Theme.MiniQuiz">
         <activity
             android:name=".ShowCorrectHint"
-            android:screenOrientation="portrait"
-            ></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Finish"
             android:screenOrientation="portrait" />

@@ -43,7 +43,7 @@
                 android:id="@+id/textViewAnswerCard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="显示正确答案文本"
+                android:text="显示答案文本"
                 android:textSize="40dp"
                 android:layout_margin="10dp"/>
 
@@ -51,9 +51,12 @@
                 android:id="@+id/buttonContinue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="继续"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                android:text="返回题目页"
+                android:textColor="@color/quiz_blue_light"
+                android:textStyle="bold" />
         </LinearLayout>
 
 

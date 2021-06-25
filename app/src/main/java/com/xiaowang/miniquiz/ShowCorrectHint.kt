@@ -13,10 +13,11 @@ class ShowCorrectHint : AppCompatActivity() {
         textViewAnswerCard.text = intent.getStringExtra("answer_text")
 
         buttonContinue.setOnClickListener {
-            val intentBackToQuiz = Intent(this, Questions::class.java)
-            startActivity(intentBackToQuiz)
+            val intentBack = Intent()
+//            intentBack.putExtra("data_return", "NEXT")
+            setResult(2, intentBack)
             finish()
+            // 太傻了，我想点击这个continue按钮就直接下一题，而不是回到题目页再点“下一题”
         }
-
     }
 }

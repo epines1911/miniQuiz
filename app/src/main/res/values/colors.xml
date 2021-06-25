@@ -8,5 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#FFFF9966</color>
-
+    <color name="quiz_blue">#FF4257B2</color>
+    <color name="quiz_yellow">#FFFFDD62</color>
+    <color name="quiz_blue_light">#FF7ADBE1</color>
+    <color name="dark_grey">#8a000000</color>
 </resources>
