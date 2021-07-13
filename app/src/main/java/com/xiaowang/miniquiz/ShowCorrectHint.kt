@@ -3,16 +3,19 @@ package com.xiaowang.miniquiz
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.fragment_show_correct_answer.*
+import com.xiaowang.miniquiz.databinding.ActivityShowCorrectHintBinding
 
 class ShowCorrectHint : AppCompatActivity() {
+    private lateinit var binding: ActivityShowCorrectHintBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_show_correct_hint)
+        binding = ActivityShowCorrectHintBinding.inflate(layoutInflater)
+//        val view = binding.root
+        setContentView(binding.root)
 
-        textViewAnswerCard.text = intent.getStringExtra("answer_text")
+        binding.textViewAnswerCard.text = intent.getStringExtra("answer_text")
 
-        buttonContinue.setOnClickListener {
+        binding.buttonContinue.setOnClickListener {
             val intentBack = Intent()
 //            intentBack.putExtra("data_return", "NEXT")
             setResult(2, intentBack)
