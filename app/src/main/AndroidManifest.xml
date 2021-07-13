@@ -11,10 +11,12 @@
         android:theme="@style/Theme.MiniQuiz">
         <activity
             android:name=".ShowCorrectHint"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Questions"/>
         <activity
             android:name=".Finish"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Questions"/>
         <activity
             android:name=".Questions"
             android:screenOrientation="portrait" />
