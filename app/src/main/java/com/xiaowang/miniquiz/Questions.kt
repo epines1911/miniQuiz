@@ -26,7 +26,12 @@ class Questions : AppCompatActivity() {
 
         setQuestion()
 
-        val tvList = listOf<TextView>(binding.textViewAnswer1, binding.textViewAnswer2, binding.textViewAnswer3, binding.textViewAnswer4)
+        val tvList = listOf<TextView>(
+            binding.textViewAnswer1,
+            binding.textViewAnswer2,
+            binding.textViewAnswer3,
+            binding.textViewAnswer4
+        )
 
         for (tv in tvList) {
             tv.setOnClickListener {
@@ -61,8 +66,6 @@ class Questions : AppCompatActivity() {
     }
 
     private fun setDefaultForm(){
-
-
         binding.textViewAnswer1.setTextColor(Color.parseColor("#8a000000"))
         binding.textViewAnswer2.setTextColor(Color.parseColor("#8a000000"))
         binding.textViewAnswer3.setTextColor(Color.parseColor("#8a000000"))

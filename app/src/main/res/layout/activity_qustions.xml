@@ -22,53 +22,53 @@
         android:id="@+id/textViewQueText"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="题干"
-        android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@id/progressBar"
-        app:layout_constraintBottom_toTopOf="@id/textViewAnswer1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="30dp"
-        android:textSize="30dp"/>
+        android:text="Quiz content"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@id/textViewAnswer1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressBar" />
 
     <TextView
         android:id="@+id/textViewAnswer1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="答案1"
-        app:layout_constraintTop_toBottomOf="@id/textViewQueText"
-        app:layout_constraintBottom_toTopOf="@id/textViewAnswer2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginHorizontal="10dp"
         android:layout_marginVertical="20dp"
-        android:textSize="40dp" />
+        android:text="Answer1"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toTopOf="@id/textViewAnswer2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewQueText" />
 
     <TextView
         android:id="@+id/textViewAnswer2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="答案2"
-        app:layout_constraintTop_toBottomOf="@id/textViewAnswer1"
-        app:layout_constraintBottom_toTopOf="@id/textViewAnswer3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginHorizontal="10dp"
         android:layout_marginVertical="20dp"
-        android:textSize="40dp"/>
+        android:text="Answer2"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toTopOf="@id/textViewAnswer3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewAnswer1" />
 
     <TextView
         android:id="@+id/textViewAnswer3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="答案3"
-        app:layout_constraintTop_toBottomOf="@id/textViewAnswer2"
-        app:layout_constraintBottom_toTopOf="@id/textViewAnswer4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginHorizontal="10dp"
         android:layout_marginVertical="20dp"
-        android:textSize="40dp"/>
+        android:text="Answer3"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toTopOf="@id/textViewAnswer4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewAnswer2" />
 
     <TextView
         android:id="@+id/textViewAnswer4"
@@ -76,11 +76,11 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
         android:layout_marginVertical="20dp"
-        android:text="答案4"
+        android:text="Answer4"
         android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewAnswer3"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/textViewAnswer3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

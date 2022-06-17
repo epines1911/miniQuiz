@@ -26,26 +26,26 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="答错了"
-                android:textColor="@color/white"
+                android:layout_margin="10dp"
                 android:background="@color/orange"
+                android:text="Wrong"
                 android:textAlignment="center"
-                android:textSize="20dp"
-                android:layout_margin="10dp"/>
+                android:textColor="@color/white"
+                android:textSize="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="正确答案"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:text="Answer" />
 
             <TextView
                 android:id="@+id/textViewAnswerCard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="显示答案文本"
-                android:textSize="40dp"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:text="Answer content"
+                android:textSize="40dp" />
 
             <Button
                 android:id="@+id/buttonContinue"
@@ -54,7 +54,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:background="@android:color/transparent"
-                android:text="返回题目页"
+                android:text="continue"
                 android:textColor="@color/quiz_blue_light"
                 android:textStyle="bold" />
         </LinearLayout>

@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonFlashCard.setOnClickListener {
-            Toast.makeText(this, "在做了", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Sorry, it hasn't been finished :)", Toast.LENGTH_SHORT).show()
         }
     }
 }

@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="欢迎！"
+            android:text="Welcome!"
             android:textSize="40dp"
             android:textStyle="bold" />
 
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="这是一个简单的Quiz APP"
+            android:text="It's a simple Quiz APP"
             android:textSize="30dp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -41,22 +41,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="进入问答模式"
-        app:layout_constraintTop_toBottomOf="@id/welcome"
+        android:text="Quiz Mode"
         app:layout_constraintBottom_toTopOf="@id/buttonFlashCard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"/>
+        app:layout_constraintTop_toBottomOf="@id/welcome"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
         android:id="@+id/buttonFlashCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="进入卡片模式"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Flash Card Mode"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonQuiz"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonQuiz" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
